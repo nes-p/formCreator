@@ -1,9 +1,9 @@
 import React, { FC, useState } from 'react';
-import Config from '../../modules/config/Congif';
-import Result from '../../modules/result/Result';
-import TabList from '../tab-list/TabsList';
-import TabPanel from '../tab-panel/TabPanel';
-import Tab from '../tab/Tab';
+import Config from '../config/Congif';
+import Result from '../result/Result';
+import TabList from '../../components/tab-list/TabsList';
+import TabPanel from '../../components/tab-panel/TabPanel';
+import Tab from '../../components/tab/Tab';
 
 export enum FormTabs {
     CONFIG = 'Config',
@@ -14,9 +14,11 @@ export type ITabHandler = (event: any, tabValue: FormTabs) => void;
 
  const TabManager: FC = () => {
     const [activeTab, setTab] = useState(FormTabs.CONFIG);
+    const [isApplied, setApplied] = useState(false);
     const tabHandler = (e: any) => {
         setTab(e.target.value);
     };
+    const [configData, setCongifData] = useState('test');
     const tabs = [{
         value: FormTabs.CONFIG
     },
@@ -54,14 +56,14 @@ export type ITabHandler = (event: any, tabValue: FormTabs) => void;
              id='config-panel'
              ariaLabelledby={`${FormTabs.CONFIG.toLowerCase()}-tab`}
         >       
-          <Config/>
+        <Config setCongifData={setCongifData} configData={configData}/>   
         </TabPanel>
         <TabPanel
           isShow = {activeTab === FormTabs.RESULT}
           id='results-panel'
           ariaLabelledby={`${FormTabs.RESULT.toLowerCase()}-tab`}
      >    
-       <Result/>
+       <Result configData={configData} applied={isApplied}/>
      </TabPanel>
                     </>
     );
