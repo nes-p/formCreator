@@ -4,8 +4,7 @@ export interface TabPanelProps {
     children?: React.ReactNode[] | React.ReactNode;
     id: string;
     ariaLabelledby: string;
-    isShow: boolean;
-    tabIndex?: number;
+    isShow: boolean;    
 }
 
 const TabPanel: FC<TabPanelProps> = ({ children, isShow, id, ariaLabelledby }) => (

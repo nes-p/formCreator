@@ -1,14 +1,12 @@
 import React, { FC } from 'react';
 
 export interface TabsProps {
-    children?: React.ReactNode[] | React.ReactNode;
-    onChange?: ((event: React.ChangeEvent<{}>, value: any) => void) | undefined;
-    value?: any;
+    children?: React.ReactNode[] | React.ReactNode;    
 }
 
 const TabList: FC<TabsProps> = ({ children}) => (
     <div role="tablist">
-        {children}
+       {children}
     </div>    
 );
 

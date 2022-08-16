@@ -1,22 +1,26 @@
 import React, { FC } from 'react';
-
+import { FormTabs } from '../tab-manager/TabManager';
+// import './tab.scss';
 export interface TabProps {
     id: string;
-    label: string;
-    tabIndex?: number;
-    isSelected: boolean;
+    value: FormTabs;
+    activeTab: FormTabs;
+    onClick: any;
 }
-
-const Tab: FC<TabProps> = ({id, label, tabIndex, isSelected}) => (
-    <button 
+const Tab: FC<TabProps> = ({id, onClick, value, activeTab}) => {
+  
+    return(
+  <button 
     role="tab" 
-    aria-selected={isSelected} 
-    // aria-controls="panel-1" 
-    id={id} 
-    tabIndex={tabIndex}
+    aria-selected={activeTab === value}    
+    id={id}     
+    value={value}
+    onClick={onClick}
+    className='tab'
     >
-    {label}
+    {value}
   </button>
-);
+  );
+};
 
 export default Tab;
