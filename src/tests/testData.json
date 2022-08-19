@@ -18,11 +18,13 @@
         },
         {
             "label": "choose",
-            "type": "radio" 
+            "type": "radio",
+            "radioOne": "radio1",
+            "radioTwo": "radio2" 
         },
         {
-            "label": "data",
-            "type": "data" 
+            "label": "date",
+            "type": "date" 
         }
     ]
 }

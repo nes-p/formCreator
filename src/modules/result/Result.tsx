@@ -33,6 +33,8 @@ return (
     <Panel>
         {
             applied && (
+                <form>
+                    {
                 resultData.items.map((item) => {
                     const key = FieldsTypes.find(el => el.includes(item.type));                      
                       switch (key)  {
@@ -47,9 +49,10 @@ return (
                         case 'dateflied':
                           return  <DateField label={capitalizeFirstLetter(item.label)}/>
                         case 'radio buttons':
-                           return <RadioField label={capitalizeFirstLetter(item.label)}/> 
+                           return <RadioField label={capitalizeFirstLetter(item.label)} radioOne={item.radioOne as string} radioTwo={item.radioTwo as string}/> 
                        }       
                 })
+             } </form>
             )
         }
         
