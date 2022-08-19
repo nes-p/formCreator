@@ -1,0 +1,28 @@
+{
+    "items": [
+        {
+            "label": "count",
+            "type": "number"
+        },        
+        {
+            "label": "is editable",
+            "type": "checkbox" 
+        },
+        {
+            "label": "caption",
+            "type": "textfield" 
+        },
+        {
+            "label": "description",
+            "type": "textarea" 
+        },
+        {
+            "label": "choose",
+            "type": "radio" 
+        },
+        {
+            "label": "data",
+            "type": "data" 
+        }
+    ]
+}

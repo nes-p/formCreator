@@ -1,11 +1,12 @@
 import React, { FC } from 'react';
 export interface ButtonProps {
     btnLabel: string;
+    onClick: () => void;
 }
 
-const Button: FC<ButtonProps> = ({btnLabel}) => {
+const Button: FC<ButtonProps> = ({btnLabel, onClick}) => {
 return (
-    <button>{btnLabel}</button>
+    <button onClick={onClick}>{btnLabel}</button>
 );
 }
 

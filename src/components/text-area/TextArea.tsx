@@ -1,5 +1,12 @@
-export const TextAreaField =() => {
+export const TextAreaField =({label}:{label: string}) => {
     return (
-        <textarea/>
+        <fieldset>
+            <label>
+                {label}
+            </label> 
+               <textarea />
+
+        </fieldset>
+        
     );
 }

@@ -10,5 +10,5 @@ elementsDictionary.set('numberfield', NumberField );
 elementsDictionary.set('textfield', TextField);
 elementsDictionary.set('textarea', TextAreaField);
 elementsDictionary.set('checkbox', CheckBoxField);
-elementsDictionary.set('dateflied', DateField);
+elementsDictionary.set('datefield', DateField);
 elementsDictionary.set('radio buttons', RadioField);

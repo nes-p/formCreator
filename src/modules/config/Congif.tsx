@@ -7,9 +7,10 @@ import './../config/config.css';
 export interface ConfigProps {
     configData: string,
     setCongifData: (data: string) => void;
+    onApply: () => void;
 }
 
-const Config: FC<ConfigProps> = ({configData,setCongifData}) => {
+const Config: FC<ConfigProps> = ({configData, setCongifData, onApply}) => {
 const handleChange = (e: any) => {
     setCongifData(e.target.value)
 }
@@ -24,7 +25,7 @@ return (
             {/* </code> */}
             </textarea>
             
-        <Button btnLabel="Apply"/>
+        <Button btnLabel="Apply" onClick={onApply}/>
     </Panel>
 );
 }

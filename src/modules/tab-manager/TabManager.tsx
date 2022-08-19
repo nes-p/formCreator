@@ -18,6 +18,10 @@ export type ITabHandler = (event: any, tabValue: FormTabs) => void;
     const tabHandler = (e: any) => {
         setTab(e.target.value);
     };
+    const applyHandler = () => {
+        setApplied(true);
+        setTab(FormTabs.RESULT);
+    };
     const [configData, setCongifData] = useState('test');
     const tabs = [{
         value: FormTabs.CONFIG
@@ -56,7 +60,7 @@ export type ITabHandler = (event: any, tabValue: FormTabs) => void;
              id='config-panel'
              ariaLabelledby={`${FormTabs.CONFIG.toLowerCase()}-tab`}
         >       
-        <Config setCongifData={setCongifData} configData={configData}/>   
+        <Config setCongifData={setCongifData} configData={configData} onApply={applyHandler}/>   
         </TabPanel>
         <TabPanel
           isShow = {activeTab === FormTabs.RESULT}

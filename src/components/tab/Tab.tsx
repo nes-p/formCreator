@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { FormTabs } from '../tab-manager/TabManager';
+import { FormTabs } from '../../modules/tab-manager/TabManager';
 // import './tab.scss';
 export interface TabProps {
     id: string;
