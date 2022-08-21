@@ -2,7 +2,6 @@
     border: none;
 }
 
-
 .capitalize {
     text-transform: capitalize;
 }
@@ -29,7 +28,6 @@
   }
 
   .checkboxInput {
-    /* width:auto;   */
     margin-right: 190px;     
   }
 

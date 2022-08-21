@@ -1,6 +1,7 @@
 import classnames from "classnames";
 import { FC } from "react";
 import '../../form.css'
+
 export interface NumberProps {
     label: string;
     className?: string;

@@ -9,7 +9,7 @@ export interface TextProps {
 export const TextField:FC<TextProps> =({label}) => {
     return (
         <fieldset className="fieldset">
-    <label className={classnames(["capitalize", "label"])}>
+        <label className={classnames(["capitalize", "label"])}>
             {label}    
         <input className="input"/>
         </label> 

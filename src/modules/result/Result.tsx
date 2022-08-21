@@ -9,7 +9,6 @@ import { TextAreaField } from "../../components/text-area/TextArea";
 import { TextField } from "../../components/text-field/TextField";
 import { FieldsTypes, stubResult } from "../../lib/utils/constants";
 import { isJsonString } from "../../lib/utils/isJson";
-import _noop from 'lodash/noop';
 import './../result/result.css';
 
 export interface ResultProps{
@@ -67,8 +66,7 @@ return (
              } 
              <div className="results-btns">
                 {resultData.formData?.buttons?.map(btnText => {
-                    return <Button btnLabel={btnText} 
-                    // onClick={_noop}
+                    return <Button btnLabel={btnText}                     
                     key={btnText} 
                     />
                 })}
