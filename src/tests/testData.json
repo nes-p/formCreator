@@ -26,5 +26,10 @@
             "label": "date",
             "type": "date" 
         }
-    ]
+        
+    ],
+    "formData": {
+        "formTitle": "Form Title",
+        "buttons":  ["OK", "Cancel", "Apply"]  
+    }
 }

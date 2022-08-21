@@ -17,7 +17,11 @@ export interface ResultProps{
 }
 
 interface ResultsData<T> {
-      items: T[];      
+      items: T[];  
+      formData: {
+        formTitle: string,
+        buttons: [string]
+      }    
   }
 
 interface Item {
@@ -34,8 +38,13 @@ return (
         {
             applied && (
                 <form>
+                <h4>
                     {
-                resultData.items.map((item) => {
+                       resultData.formData.formTitle 
+                    }
+                    </h4>
+                    {
+                resultData.items.map((item) => {                    
                     const key = FieldsTypes.find(el => el.includes(item.type));                      
                       switch (key)  {
                         case 'numberfield': 
@@ -52,7 +61,13 @@ return (
                            return <RadioField label={capitalizeFirstLetter(item.label)} radioOne={item.radioOne as string} radioTwo={item.radioTwo as string}/> 
                        }       
                 })
-             } </form>
+             } 
+             <div>
+                {resultData.formData.buttons.map(btnText => {
+                    return <Button btnLabel={btnText}/>
+                })}
+             </div>
+             </form>
             )
         }
         
