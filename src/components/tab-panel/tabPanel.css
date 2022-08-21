@@ -1,0 +1,8 @@
+.tabPanel {    
+  display: flex;
+  flex-direction: column;  
+  font-size: calc(10px + 2vmin); 
+  max-width: 50vw;
+  min-height: 70vh;
+  border: 1px solid;
+}

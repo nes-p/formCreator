@@ -1,14 +1,18 @@
-export const TextField =({label}:{label: string}) => {
+import classnames from "classnames";
+import { FC } from "react";
+
+export interface TextProps {
+    label: string;
+    className?: string;
+}
+
+export const TextField:FC<TextProps> =({label}) => {
     return (
-        
-
-
-        <fieldset>
-        <label>
-            {label}
+        <fieldset className="fieldset">
+    <label className={classnames(["capitalize", "label"])}>
+            {label}    
+        <input className="input"/>
         </label> 
-        <input/>
-
     </fieldset>
     );
 }

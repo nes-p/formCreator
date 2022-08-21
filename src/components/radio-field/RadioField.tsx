@@ -1,27 +1,30 @@
+import classnames from "classnames";
 import { FC } from "react";
+import '../../form.css'
 
 export interface RadioProps {
     label: string;
-    radioOne: string;
-    radioTwo: string;
+    radios: [string]
 }
 
-export const RadioField: FC<RadioProps> =({label, radioOne, radioTwo}) => {
+export const RadioField: FC<RadioProps> =({label, radios}) => {
    const name = 'radioGroup' + Math.random();
     return (
         
-        <fieldset>
-        <label>
+    <fieldset className="fieldset">
+   <label className={classnames(["capitalize", "label"])}>
             {label}
-        </label>
-        <label>
-            {radioOne}
-        </label> 
-        <input type="radio" name={name} value={radioOne}/>
-        <label>
-            {radioTwo}
-        </label> 
-        <input type="radio" name={name} value={radioTwo}/>
+    <div className="radioGroup">
+        {radios.map(radio => (
+            <div key={radio}>
+            <label className="clearTransform">
+                 {radio}          
+             <input type="radio" name={name} value={radio}/>
+             </label> 
+             </div>
+        ))}
+        </div>
+          </label> 
     </fieldset>
     );
 }

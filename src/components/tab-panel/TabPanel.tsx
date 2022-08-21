@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import './tabPanel.css';
 
 export interface TabPanelProps {
     children?: React.ReactNode[] | React.ReactNode;
@@ -7,10 +8,17 @@ export interface TabPanelProps {
     isShow: boolean;    
 }
 
-const TabPanel: FC<TabPanelProps> = ({ children, isShow, id, ariaLabelledby }) => (
-    <div role="tabpanel" id={id} aria-labelledby={ariaLabelledby}>
-        {isShow && children}
+const TabPanel: FC<TabPanelProps> = ({ children, isShow, id, ariaLabelledby }) => 
+   { 
+    return (
+    isShow ? 
+    <div role="tabpanel" id={id} aria-labelledby={ariaLabelledby} className='tabPanel'>
+        {children}
     </div>
-);
+    :
+    <></>
+    )
+}
+;
 
 export default TabPanel;

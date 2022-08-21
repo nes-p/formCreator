@@ -19,13 +19,45 @@
         {
             "label": "choose",
             "type": "radio",
-            "radioOne": "radio1",
-            "radioTwo": "radio2" 
+            "radios": [
+             "radio1",
+             "radio2" 
+            ]
+        },
+        {
+            "label": "date",
+            "type": "date" 
+        },
+        {
+            "label": "count",
+            "type": "number"
+        },        
+        {
+            "label": "is editable",
+            "type": "checkbox" 
+        },
+        {
+            "label": "caption",
+            "type": "textfield" 
+        },
+        {
+            "label": "description",
+            "type": "textarea" 
+        },
+        {
+            "label": "choose",
+            "type": "radio",
+            "radios": [
+             "radio1",
+             "radio2",
+             "radio3" 
+            ]
         },
         {
             "label": "date",
             "type": "date" 
         }
+       
         
     ],
     "formData": {

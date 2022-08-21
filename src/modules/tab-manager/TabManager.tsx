@@ -4,6 +4,7 @@ import Result from '../result/Result';
 import TabList from '../../components/tab-list/TabsList';
 import TabPanel from '../../components/tab-panel/TabPanel';
 import Tab from '../../components/tab/Tab';
+import './tabManager.css';
 
 export enum FormTabs {
     CONFIG = 'Config',
@@ -22,7 +23,7 @@ export type ITabHandler = (event: any, tabValue: FormTabs) => void;
         setApplied(true);
         setTab(FormTabs.RESULT);
     };
-    const [configData, setCongifData] = useState('test');
+    const [configData, setCongifData] = useState('');
     const tabs = [{
         value: FormTabs.CONFIG
     },
@@ -32,7 +33,7 @@ export type ITabHandler = (event: any, tabValue: FormTabs) => void;
 
 ];
     return (
-        <>
+        <div className='tabManager'>
         <TabList  aria-label="FormTabs">
         {/* {tabs.map(tab=>  {
                return <Tab                  
@@ -68,8 +69,8 @@ export type ITabHandler = (event: any, tabValue: FormTabs) => void;
           ariaLabelledby={`${FormTabs.RESULT.toLowerCase()}-tab`}
      >    
        <Result configData={configData} applied={isApplied}/>
-     </TabPanel>
-                    </>
+       </TabPanel>
+        </div>
     );
 }
 

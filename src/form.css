@@ -1,0 +1,47 @@
+.fieldset {
+    border: none;
+}
+
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.clearTransform {
+    text-transform: none;
+}
+
+.label {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: right;
+    width: 400px;
+    line-height: 26px;
+    margin-bottom: 10px;
+  }
+  
+  .input {
+    height: 20px;
+    flex: 0 0 200px;
+    margin-left: 10px;
+
+  }
+
+  .checkboxInput {
+    /* width:auto;   */
+    margin-right: 190px;     
+  }
+
+  .radioGroup {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 206px;
+    margin-left: 10px;
+    align-items: flex-start;
+  }
+
+  .radio {
+    display: flex;
+    flex-direction: row;
+  }

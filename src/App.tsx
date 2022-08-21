@@ -17,9 +17,9 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a> */}
-        <TabManager/>
+        </a> */}        
       </header>
+      <TabManager/>
     </div>
   );
 }

@@ -7,9 +7,10 @@ import Panel from "../../components/panel/Panel";
 import { RadioField } from "../../components/radio-field/RadioField";
 import { TextAreaField } from "../../components/text-area/TextArea";
 import { TextField } from "../../components/text-field/TextField";
-import { capitalizeFirstLetter } from "../../lib/utils/capitalize";
-import { FieldsTypes } from "../../lib/utils/constants";
-import { elementsDictionary } from "../../lib/utils/ElementsDictionary";
+import { FieldsTypes, stubResult } from "../../lib/utils/constants";
+import { isJsonString } from "../../lib/utils/isJson";
+import _noop from 'lodash/noop';
+import './../result/result.css';
 
 export interface ResultProps{
     configData: string
@@ -18,9 +19,9 @@ export interface ResultProps{
 
 interface ResultsData<T> {
       items: T[];  
-      formData: {
-        formTitle: string,
-        buttons: [string]
+      formData?: {
+        formTitle?: string,
+        buttons?: [string]
       }    
   }
 
@@ -31,16 +32,18 @@ interface Item {
 } 
 
 const Result:FC<ResultProps> = ({configData, applied}) => {
-    const resultData: ResultsData<Item> = JSON.parse(configData);
 
+    const resultData: ResultsData<Item> = configData && isJsonString(configData) && JSON.parse(configData);
+          
+    const isRender = configData && applied &&  resultData.items;    
 return (    
     <Panel>
         {
-            applied && (
-                <form>
-                <h4>
+          isRender ? (
+                <form className="form">
+                <h4 className="title">
                     {
-                       resultData.formData.formTitle 
+                       resultData.formData?.formTitle 
                     }
                     </h4>
                     {
@@ -48,27 +51,32 @@ return (
                     const key = FieldsTypes.find(el => el.includes(item.type));                      
                       switch (key)  {
                         case 'numberfield': 
-                        return <NumberField label={capitalizeFirstLetter(item.label)}/>
+                        return <NumberField label={item.label} key={item.label}/>
                         case 'textfield':
-                          return  <TextField label={capitalizeFirstLetter(item.label)}/>
+                          return  <TextField label={item.label} key={item.label}/>
                         case 'textarea':    
-                        return <TextAreaField label={capitalizeFirstLetter(item.label)}/>
+                        return <TextAreaField label={item.label} key={item.label}/>
                         case 'checkbox':
-                          return  <CheckBoxField label={capitalizeFirstLetter(item.label)}/> 
+                          return  <CheckBoxField label={item.label} key={item.label}/> 
                         case 'dateflied':
-                          return  <DateField label={capitalizeFirstLetter(item.label)}/>
+                          return  <DateField label={item.label} key={item.label}/>
                         case 'radio buttons':
-                           return <RadioField label={capitalizeFirstLetter(item.label)} radioOne={item.radioOne as string} radioTwo={item.radioTwo as string}/> 
+                           return <RadioField label={item.label} radios={item.radios as [string]} key={item.label}/> 
                        }       
                 })
              } 
-             <div>
-                {resultData.formData.buttons.map(btnText => {
-                    return <Button btnLabel={btnText}/>
+             <div className="results-btns">
+                {resultData.formData?.buttons?.map(btnText => {
+                    return <Button btnLabel={btnText} 
+                    // onClick={_noop}
+                    key={btnText} 
+                    />
                 })}
              </div>
              </form>
             )
+            :
+            <code className="stub">{stubResult}</code> 
         }
         
     </Panel>

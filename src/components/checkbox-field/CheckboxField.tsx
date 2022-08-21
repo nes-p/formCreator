@@ -1,10 +1,21 @@
-export const CheckBoxField =({label}:{label: string}) => {
+import classnames from "classnames";
+import { FC } from "react";
+import '../../form.css'
+
+export interface CheckBoxProps {
+    label: string;
+    className?: string;
+}
+
+export const CheckBoxField: FC<CheckBoxProps> =({label, className}) => {
     return (        
-        <fieldset>
-        <label>
+        <fieldset className="fieldset">
+        <label className={classnames(["capitalize", "label"])}>
             {label}
+        <div className="checkboxInput">
+        <input className="input" type="checkbox"/>
+        </div>
         </label> 
-        <input type="checkbox"/>
 
     </fieldset>
     );
