@@ -3,16 +3,14 @@ import { FC } from "react";
 import '../../form.css'
 
 export interface DateProps {
-    label: string;
-    className?: string;
+    label: string;  
 }
 
-export const DateField:FC<DateProps> =({label, className}) => {
+export const DateField:FC<DateProps> =({label}) => {
     return (
         <fieldset className="fieldset">
        <label className={classnames(["capitalize", "label"])}>
-            {label}
-      
+            {label}      
         <input className="input" type="date"/>
         </label> 
     </fieldset>

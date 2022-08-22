@@ -75,8 +75,7 @@ return (
             )
             :
             <code className="stub">{stubResult}</code> 
-        }
-        
+        }        
     </Panel>
 );
 }

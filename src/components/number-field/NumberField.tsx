@@ -4,10 +4,10 @@ import '../../form.css'
 
 export interface NumberProps {
     label: string;
-    className?: string;
+   
 }
 
-export const NumberField:FC<NumberProps> =({label, className}) => {
+export const NumberField:FC<NumberProps> =({label}) => {
     return (        
         <fieldset className="fieldset">
         <label className={classnames(["capitalize", "label"])}>

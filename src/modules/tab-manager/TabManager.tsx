@@ -35,26 +35,15 @@ export type ITabHandler = (event: any, tabValue: FormTabs) => void;
     return (
         <div className='tabManager'>
         <TabList  aria-label="FormTabs">
-        {/* {tabs.map(tab=>  {
+        {tabs.map(tab=>  {
                return <Tab                  
                  id={`${tab.value.toLowerCase()}-tab`}
                  activeTab= {activeTab}
                  value={tab.value}
-                 onClick={tabHandler}                
+                 onClick={tabHandler} 
+                 key = {tab.value}               
                  />
-        })} */}
-            <Tab                  
-                id='config-tab'
-                activeTab= {activeTab}
-                value={FormTabs.CONFIG}
-                onClick={tabHandler}                
-                />
-            <Tab 
-                 id='results-tab' 
-                 activeTab= {activeTab}                  
-                 value={FormTabs.RESULT}
-                 onClick={tabHandler}
-                 />
+        })}            
         </TabList>
         <TabPanel
              isShow = {activeTab === FormTabs.CONFIG}

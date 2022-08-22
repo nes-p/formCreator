@@ -6,7 +6,7 @@ export interface TabProps {
     id: string;
     value: FormTabs;
     activeTab: FormTabs;
-    onClick: any;
+    onClick: (e: any) => void;
 }
 const Tab: FC<TabProps> = ({id, onClick, value, activeTab}) => {
   const isActive = activeTab === value;

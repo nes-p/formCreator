@@ -21,15 +21,9 @@ return (
             onChange={handleChange}
             value={configData}
             placeholder={configPlaceholder}
-            cols={1}
-            // defaultValue={''}
+            cols={1}            
             className='config-textarea' 
             />
-            {/* <code> */}
-                {/* {configData} */}
-            {/* </code> */}
-            {/* </textarea> */}
-            
         <Button btnLabel="Apply" onClick={onApply} className='config-btn'/>
     </Panel>
 );

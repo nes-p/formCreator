@@ -3,11 +3,10 @@ import { FC } from "react";
 import '../../form.css'
 
 export interface CheckBoxProps {
-    label: string;
-    className?: string;
+    label: string;    
 }
 
-export const CheckBoxField: FC<CheckBoxProps> =({label, className}) => {
+export const CheckBoxField: FC<CheckBoxProps> =({label}) => {
     return (        
         <fieldset className="fieldset">
         <label className={classnames(["capitalize", "label"])}>
