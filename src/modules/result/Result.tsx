@@ -46,21 +46,21 @@ return (
                     }
                     </h4>
                     {
-                resultData.items.map((item) => {                    
+                resultData.items.map((item, index) => {                    
                     const key = FieldsTypes.find(el => el.includes(item.type));                      
                       switch (key)  {
                         case 'numberfield': 
-                        return <NumberField label={item.label} key={item.label}/>
+                        return <NumberField label={item.label} key={item.label + index}/>
                         case 'textfield':
-                          return  <TextField label={item.label} key={item.label}/>
+                          return  <TextField label={item.label} key={item.label + index}/>
                         case 'textarea':    
-                        return <TextAreaField label={item.label} key={item.label}/>
+                        return <TextAreaField label={item.label} key={item.label + index}/>
                         case 'checkbox':
-                          return  <CheckBoxField label={item.label} key={item.label}/> 
+                          return  <CheckBoxField label={item.label} key={item.label + index}/> 
                         case 'dateflied':
-                          return  <DateField label={item.label} key={item.label}/>
+                          return  <DateField label={item.label} key={item.label + index}/>
                         case 'radio buttons':
-                           return <RadioField label={item.label} radios={item.radios as [string]} key={item.label}/> 
+                           return <RadioField label={item.label} radios={item.radios as [string]} key={item.label + index}/> 
                        }       
                 })
              } 

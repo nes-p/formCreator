@@ -15,8 +15,8 @@ export const RadioField: FC<RadioProps> =({label, radios}) => {
    <label className={classnames(["capitalize", "label"])}>
             {label}
     <div className="radioGroup">
-        {radios.map(radio => (
-            <div key={radio}>
+        {radios.map((radio, index) => (
+            <div key={radio + index}>
             <label className="clearTransform">
                  {radio}          
              <input type="radio" name={name} value={radio}/>
